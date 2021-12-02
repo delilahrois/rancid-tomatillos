@@ -1,12 +1,14 @@
 import React from 'react'
 import Movie from './Movie'
+import './Library.css'
 
 const Library = ({ movies }) => {
   const moviePosters = movies.map(movie => {
     return (
       <Movie
+        posterImg={movie.poster_path}
         title={movie.title}
-        rating={movie.average_rating}
+        rating={Math.round(movie.average_rating)}
       />
     )
 

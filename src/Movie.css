@@ -1,0 +1,12 @@
+.movie-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid orange;
+  margin: 20px;
+  padding: 20px;
+}
+
+img {
+  width: 200px;
+}

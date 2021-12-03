@@ -2,6 +2,15 @@
   display: flex;
 }
 
-/* img {
-  width: 400px;
-} */
+button {
+  width: 80px;
+}
+
+.side-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-img {
+  height: 540px;
+}

@@ -18,10 +18,12 @@ class App extends Component {
     const movieDetails = this.state.movies.find((movie) => {
       return movie.id === id;
     })
-    this.setState({singleMovie: movieDetails, onMainPage: false})
-
+    this.setState({ singleMovie: movieDetails, onMainPage: false })
   }
 
+  returnToMain = () => {
+    this.setState({ onMainPage: true })
+  }
   render() {
     return (
     this.state.onMainPage ?
@@ -31,7 +33,7 @@ class App extends Component {
       </main> ):
       (<main>
           <h1>Rancid Tomatillos</h1>
-           <Page movie={this.state.singleMovie} />
+           <Page movie={this.state.singleMovie} returnToMain={this.returnToMain} />
         </main>)
     )
   }

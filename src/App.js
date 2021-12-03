@@ -8,10 +8,18 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       onMainPage: true,
       singleMovie: {},
     }
+  }
+
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ movies: data.movies })
+    })
   }
 
   displayMovie = (id) => {
@@ -24,6 +32,7 @@ class App extends Component {
   returnToMain = () => {
     this.setState({ onMainPage: true })
   }
+
   render() {
     return (
     this.state.onMainPage ?
@@ -37,6 +46,6 @@ class App extends Component {
         </main>)
     )
   }
-
 }
+
 export default App;

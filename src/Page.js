@@ -1,7 +1,7 @@
 import React from 'react';
 import './Page.css'
 
-const Page = ({movie, returnToMain}) => {
+const Page = ({ movie, returnToMain }) => {
   // console.log(movie)
   return (
     <section className='movie-page'>

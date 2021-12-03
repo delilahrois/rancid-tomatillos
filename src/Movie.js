@@ -4,9 +4,9 @@ import './Movie.css'
 const Movie = ({ posterImg, title, rating, id, displayMovie }) => {
   return(
     <div className="movie-poster">
-      <img src={posterImg} alt={title} onClick={() => displayMovie(id)} />
-      <h3>{title}</h3>
-      <h4>Average rating: {rating}</h4>
+      <img className='poster-img'src={posterImg} alt={title} onClick={() => displayMovie(id)} />
+      <h3 className='poster-title'>{title}</h3>
+      <h4 className='poster-rating'>Average rating: {rating}</h4>
     </div>
   )
 }

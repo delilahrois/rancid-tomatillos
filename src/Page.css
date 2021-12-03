@@ -1,0 +1,16 @@
+.movie-page {
+  display: flex;
+}
+
+button {
+  width: 80px;
+}
+
+.side-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-img {
+  height: 540px;
+}

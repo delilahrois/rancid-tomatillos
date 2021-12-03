@@ -14,7 +14,7 @@ const movieData = {
       "backdrop_path": "https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg",
       "title": "Mulan",
       "average_rating": 4.909090909090909,
-      "release_date": "2020-09-04"
+      "release_date": "2020-09-04" 
     },
     {
       "id": 718444,

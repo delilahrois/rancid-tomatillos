@@ -11,6 +11,7 @@ class App extends Component {
       movies: [],
       onMainPage: true,
       singleMovie: {},
+      error: null
     }
   }
 
@@ -19,6 +20,10 @@ class App extends Component {
     .then(response => response.json())
     .then(data => {
       this.setState({ movies: data.movies })
+    })
+    .catch(err => {
+      console.log(err)
+      this.setState({ error: err })
     })
   }
 
@@ -38,10 +43,12 @@ class App extends Component {
     this.state.onMainPage ?
       (<main>
         <h1>Rancid Tomatillos</h1>
+        { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
         <Library movies={this.state.movies} displayMovie={this.displayMovie} />
       </main> ):
       (<main>
           <h1>Rancid Tomatillos</h1>
+          { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
            <Page movie={this.state.singleMovie} returnToMain={this.returnToMain} />
         </main>)
     )

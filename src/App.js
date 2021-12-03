@@ -8,10 +8,23 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       onMainPage: true,
       singleMovie: {},
+      error: null
     }
+  }
+
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ movies: data.movies })
+    })
+    .catch(err => {
+      console.log(err)
+      this.setState({ error: err })
+    })
   }
 
   displayMovie = (id) => {
@@ -24,19 +37,22 @@ class App extends Component {
   returnToMain = () => {
     this.setState({ onMainPage: true })
   }
+
   render() {
     return (
     this.state.onMainPage ?
       (<main>
         <h1>Rancid Tomatillos</h1>
+        { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
         <Library movies={this.state.movies} displayMovie={this.displayMovie} />
       </main> ):
       (<main>
           <h1>Rancid Tomatillos</h1>
+          { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
            <Page movie={this.state.singleMovie} returnToMain={this.returnToMain} />
         </main>)
     )
   }
-
 }
+
 export default App;

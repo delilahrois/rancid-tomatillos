@@ -13,7 +13,6 @@ const Library = ({ movies, displayMovie }) => {
         displayMovie={displayMovie}
       />
     )
-
   })
 
   return (

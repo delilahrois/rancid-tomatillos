@@ -2,9 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 2px solid orange; */
   margin: 20px 40px;
-  /* padding: 10px; */
 }
 
 .poster-img {
@@ -17,9 +15,13 @@
 .poster-title,
 .poster-rating {
   margin: 2px;
-  /* padding: 2px; */
 }
 
 .poster-title {
   margin-top: 20px;
+  font-size: 1.5vw;
+}
+
+.poster-rating {
+  font-size: 1vw;
 }

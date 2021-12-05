@@ -1,16 +1,39 @@
 .movie-page {
   display: flex;
+  justify-content: center;
+  padding: 40px;
 }
 
 button {
-  width: 80px;
+  height: 60px;
+  background-color: #BABD8D;
+  font-family: 'Anton', sans-serif;
+  color: black;
+  border-radius: 5px;
+  border: 0px;
+  padding: 5px;
+  font-size: 1vw;
 }
 
 .side-info {
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 
 .page-img {
   height: 540px;
+}
+
+.movie-title {
+  font-size: 2.5vw;
+  font-family: 'Unica One', cursive;
+}
+
+.movie-rating {
+  font-size: 1.5vw;
+}
+
+.movie-plot {
+  font-size: 1.2vw;
 }

@@ -3,18 +3,23 @@
   flex-direction: column;
   align-items: center;
   /* border: 2px solid orange; */
-  margin: 5px;
+  margin: 20px 40px;
   /* padding: 10px; */
 }
 
 .poster-img {
-  border: 1.5px solid grey;
-  box-shadow: 6px 8px 10px grey;
+  border: 1.5px solid #FFDAC6;
+  box-shadow: 6px 8px 10px #BABD8D;
   width: 200px;
   height: 250px;
 }
 
 .poster-title,
 .poster-rating {
-  margin: 0;
+  margin: 2px;
+  /* padding: 2px; */
+}
+
+.poster-title {
+  margin-top: 20px;
 }

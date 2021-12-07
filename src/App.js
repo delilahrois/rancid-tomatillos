@@ -11,7 +11,7 @@ class App extends Component {
       movies: [],
       onMainPage: true,
       singleMovie: {},
-      movieVideo: null,
+      trailer: null,
       movieOverview: null,
       error: null
     }
@@ -44,9 +44,10 @@ class App extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
           .then(response => response.json())
           .then(data => {
-            this.setState({ movieVideo: data.videos.id })
+            console.log(data.videos[0].id)
+            this.setState({ trailer: data.videos[0].key })
           })
-            console.log(this.state.movieVideo)
+
 
   }
 
@@ -67,7 +68,7 @@ class App extends Component {
           { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
            <Page movie={this.state.singleMovie}
                  overview={this.state.movieOverview}
-                 trailer={this.state.movieVideo}
+                 trailer={this.state.trailer}
                  returnToMain={this.returnToMain} />
         </main>)
     )

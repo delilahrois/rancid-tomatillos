@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-image: url(https://st2.depositphotos.com/6434168/45377/i/600/depositphotos_453772676-stock-photo-three-tomatillos-lined-black-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: white;
+  padding-bottom: 40px;
+  font-family: 'Economica', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+  font-size: 4.8vw;
+  color: #e6c613;
+  opacity: 80%;
+  text-shadow: 5px;
+  font-family: 'Unica One', cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  color: #FFDAC6;
+  font-family: 'Economica', sans-serif;
 }

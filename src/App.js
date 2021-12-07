@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
 import Library from './Library'
 import Page from './Page'
 import movieData from './movieData.js'
@@ -15,6 +16,8 @@ class App extends Component {
       movieOverview: null,
       error: null
     }
+
+
   }
 
   componentDidMount = () => {
@@ -22,6 +25,7 @@ class App extends Component {
     .then(response => response.json())
     .then(data => {
       this.setState({ movies: data.movies })
+
     })
     .catch(err => {
       console.log(err)
@@ -44,7 +48,6 @@ class App extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
           .then(response => response.json())
           .then(data => {
-            console.log(data.videos[0].id)
             this.setState({ trailer: data.videos[0].key })
           })
 
@@ -57,22 +60,17 @@ class App extends Component {
 
   render() {
     return (
-    this.state.onMainPage ?
-      (<main>
+      <main>
         <h1>Rancid Tomatillos</h1>
-        { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
-        <Library movies={this.state.movies} displayMovie={this.displayMovie} />
-      </main> ):
-      (<main>
-          <h1>Rancid Tomatillos</h1>
-          { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
-           <Page movie={this.state.singleMovie}
-                 overview={this.state.movieOverview}
-                 trailer={this.state.trailer}
-                 returnToMain={this.returnToMain} />
-        </main>)
+        {this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
+        <Routes>
+          <Route path='/' element={<Library movies={this.state.movies} displayMovie={this.displayMovie} />} />
+          <Route path='/:movieId' element={<Page movie={this.state.singleMovie} />} />
+        </Routes>
+      </main>
     )
   }
 }
+
 
 export default App;

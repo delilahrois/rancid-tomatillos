@@ -1,6 +1,5 @@
 import React from 'react';
 import './Page.css'
-// import PropTypes from "prop-types";
 
 const Page = ({ movie, overview, trailer, returnToMain }) => {
 
@@ -27,9 +26,5 @@ const Page = ({ movie, overview, trailer, returnToMain }) => {
     </section>
   )
 }
-
-// YouTubeEmbed.propTypes = {
-//   embedId: PropTypes.string.isRequired
-// };
 
 export default Page;

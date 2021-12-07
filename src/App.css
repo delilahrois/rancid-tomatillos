@@ -6,6 +6,8 @@ body {
   color: white;
   padding-bottom: 40px;
   font-family: 'Economica', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {

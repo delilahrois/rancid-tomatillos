@@ -6,13 +6,13 @@ import './Library.css'
 const Library = ({ movies, displayMovie }) => {
   const moviePosters = movies.map(movie => {
     return (
-      <Link to={`/${movie.id}`}>
+      <Link to={`/${movie.id}`} key={movie.id}>
         <Movie
           posterImg={movie.poster_path}
           title={movie.title}
           rating={Math.round(movie.average_rating)}
           id={movie.id}
-          key={movie.id}
+
           displayMovie={displayMovie}
         />
       </Link>

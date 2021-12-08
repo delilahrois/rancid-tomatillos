@@ -23,7 +23,6 @@ class App extends Component {
       this.setState({ movies: data.movies })
     })
     .catch(err => {
-      console.log(err)
       this.setState({ error: err })
     })
   }

@@ -12,7 +12,6 @@ const Library = ({ movies, displayMovie }) => {
           title={movie.title}
           rating={Math.round(movie.average_rating)}
           id={movie.id}
-
           displayMovie={displayMovie}
         />
       </Link>

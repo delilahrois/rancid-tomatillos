@@ -23,6 +23,7 @@ class App extends Component {
       this.setState({ movies: data.movies })
     })
     .catch(err => {
+      console.log(err)
       this.setState({ error: err })
     })
   }
@@ -42,7 +43,7 @@ class App extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
           .then(response => response.json())
           .then(data => {
-            this.setState({ trailer: data.videos[0].key })
+            this.setState({ trailer: data.videos[0] })
           })
   }
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Page.css'
+import { Link } from 'react-router-dom';
+import './Page.css';
 
-const Page = ({ movie, overview, trailer, returnToMain }) => {
-
+const Page = ({ movie, overview, trailer }) => {
   return (
     <section className='movie-page'>
       <img className='page-img'src={movie.backdrop_path} />
@@ -21,7 +21,7 @@ const Page = ({ movie, overview, trailer, returnToMain }) => {
            />
         </div>
         <p className="movie-plot">{overview}</p>
-        <button onClick={() =>returnToMain()}>Return to All Movies!</button>
+        <Link to="/"><button>Return to All Movies!</button></Link>
       </article>
     </section>
   )

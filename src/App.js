@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Library from './Library'
 import Page from './Page'
-import movieData from './movieData.js'
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
 class App extends Component {
@@ -9,7 +9,6 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      onMainPage: true,
       singleMovie: {},
       trailer: null,
       movieOverview: null,
@@ -33,7 +32,7 @@ class App extends Component {
     const movieDetails = this.state.movies.find((movie) => {
       return movie.id === id;
     })
-    this.setState({ singleMovie: movieDetails, onMainPage: false })
+    this.setState({ singleMovie: movieDetails })
 
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
         .then(response => response.json())
@@ -47,30 +46,18 @@ class App extends Component {
             console.log(data.videos[0].id)
             this.setState({ trailer: data.videos[0].key })
           })
-
-
-  }
-
-  returnToMain = () => {
-    this.setState({ onMainPage: true })
   }
 
   render() {
     return (
-    this.state.onMainPage ?
-      (<main>
+      <main>
         <h1>Rancid Tomatillos</h1>
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
-        <Library movies={this.state.movies} displayMovie={this.displayMovie} />
-      </main> ):
-      (<main>
-          <h1>Rancid Tomatillos</h1>
-          { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
-           <Page movie={this.state.singleMovie}
-                 overview={this.state.movieOverview}
-                 trailer={this.state.trailer}
-                 returnToMain={this.returnToMain} />
-        </main>)
+        <Routes>
+          <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>
+          <Route path="/:movieId" element={<Page movie={this.state.singleMovie} />}/>
+        </Routes>
+      </main> 
     )
   }
 }

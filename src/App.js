@@ -55,9 +55,9 @@ class App extends Component {
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>
-          <Route path="/:movieId" element={<Page movie={this.state.singleMovie} />}/>
+          <Route path="/:movieId" element={<Page movie={this.state.singleMovie} trailer={this.state.trailer} overview={this.state.overview}/>}/>
         </Routes>
-      </main> 
+      </main>
     )
   }
 }

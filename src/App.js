@@ -43,8 +43,7 @@ class App extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
           .then(response => response.json())
           .then(data => {
-            console.log(data.videos[0].id)
-            this.setState({ trailer: data.videos[0].key })
+            this.setState({ trailer: data.videos[0] })
           })
   }
 
@@ -55,9 +54,10 @@ class App extends Component {
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>
-          <Route path="/:movieId" element={<Page movie={this.state.singleMovie} />}/>
+          <Route path="/:movieId" element={<Page movie={this.state.singleMovie}
+            trailer={this.state.trailer} overview={this.state.movieOverview} key={this.state.singleMovie.id}/>}/>
         </Routes>
-      </main> 
+      </main>
     )
   }
 }

@@ -23,8 +23,7 @@ class App extends Component {
       this.setState({ movies: data.movies })
     })
     .catch(err => {
-      console.log(err)
-      this.setState({ error: err })
+      this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
     })
   }
 
@@ -51,7 +50,7 @@ class App extends Component {
     return (
       <main>
         <h1 data-cy='page-title'>Rancid Tomatillos</h1>
-        { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
+        { this.state.error && <p>{this.state.error}</p> }
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>
           <Route path="/:movieId" element={<Page movie={this.state.singleMovie}

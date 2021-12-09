@@ -9,6 +9,7 @@ describe('Movie page tests', () => {
   })
 
   it('should allow user to click on individual movie poster and be directed to that page', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {statusCode: 200, fixture: 'videoData.json'})
 
     cy.get('[href="/694919"]').click().url().should('include', '/694919')
     .get('[data-cy=page-title]').contains('Rancid Tomatillos')

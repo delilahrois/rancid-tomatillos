@@ -6,13 +6,13 @@ import './Page.css';
 const Page = ({ movie, overview, trailer }) => {
   return (
     <section className='movie-page'>
-      <img className='page-img'src={movie.backdrop_path} alt={movie.title} />
+      <img className='page-img'src={movie.backdrop_path} alt={movie.title} data-cy="page-image"/>
       <article className='side-info'>
-        <h2 className="movie-title">{movie.title}</h2>
+        <h2 className="movie-title" data-cy="page-movie-title">{movie.title}</h2>
         <h3 className="movie-rating">Audience Rating: {Math.round(movie.average_rating)}</h3>
-        <Video trailer={trailer}/>
+        <Video trailer={trailer} />
         <p className="movie-plot">{overview}</p>
-        <Link to="/"><button>Return to All Movies!</button></Link>
+        <Link to="/"><button data-cy="return-button">Return to All Movies!</button></Link>
       </article>
     </section>
   )

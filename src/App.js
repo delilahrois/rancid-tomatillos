@@ -50,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>Rancid Tomatillos</h1>
+        <h1 data-cy='page-title'>Rancid Tomatillos</h1>
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>

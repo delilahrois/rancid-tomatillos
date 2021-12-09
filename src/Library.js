@@ -13,13 +13,14 @@ const Library = ({ movies, displayMovie }) => {
           rating={Math.round(movie.average_rating)}
           id={movie.id}
           displayMovie={displayMovie}
+          
         />
       </Link>
     )
   })
 
   return (
-    <div className='movie-grid'>
+    <div className='movie-grid' data-cy='movie-grid'>
       {moviePosters}
     </div>
   )

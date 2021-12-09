@@ -9,10 +9,10 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      singleMovie: {},
-      trailer: null,
-      movieOverview: null,
-      error: null
+      singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
+      trailer: '',
+      movieOverview: '',
+      error: ''
     }
   }
 

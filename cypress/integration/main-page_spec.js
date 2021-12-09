@@ -1,20 +1,38 @@
-// describe('Main page', () => {
+describe('Main page', () => {
 
-//     beforeEach(() => {
-//       cy.visit('http://localhost:3000')
-//     })
+  beforeEach(() => {
 
-//     it('should allow user to visit page and render elements', () => {
-//       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//         body: {
-//           'id': 539885,
-//           'poster_path': 'https://image.tmdb.org/t/p/original//qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg',
-//           'backdrop_path': 'https://image.tmdb.org/t/p/original//54yOImQgj8i85u9hxxnaIQBRUuo.jpg',
-//           'title': 'Ava',
-//           'average_rating': 5,
-//           'release_date': '2020-07-02'
-//         }
-//       })
-//       .get('main').contains('h1')
-//     })
-// });
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {statusCode: 200, fixture: 'movieData.json'})
+
+    cy.visit('http://localhost:3000')
+
+  })
+
+  it('should allow user to visit page and render elements', () => {
+
+      cy.get('h1').contains('Rancid Tomatillos')
+        .get('div.movie-grid')
+        .get('img.poster-img')
+        // .get('input[type="text"]')
+        // .get('input[type="select"]')
+
+  })
+
+  it('should allow user to click on individual movie poster and be directed to that page', () => {
+
+    cy.get('[href="/694919"]').click().url().should('include', '/694919')
+
+  })
+})
+
+
+
+
+// cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {statusCode: 200, fixture: 'movieData.json'})
+
+// cy.fixture('movieData.json')
+//   .then((allMovies) => {cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+//     statusCode: 200,
+//     body: allMovies
+//   })
+// })

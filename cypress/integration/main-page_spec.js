@@ -15,14 +15,15 @@ describe('Main page', () => {
         .get('[data-cy=poster-img]')
         // .get('input[type="text"]')
         // .get('input[type="select"]')
-
   })
+
 
   it('should allow user to click on individual movie poster and be directed to that page', () => {
 
     cy.get('[href="/694919"]').click().url().should('include', '/694919')
 
   })
+
 })
 
 

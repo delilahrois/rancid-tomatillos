@@ -1,27 +1,18 @@
 import React from 'react';
-import './Page.css'
+import { Link } from 'react-router-dom';
+import Video from './Video'
+import './Page.css';
 
-const Page = ({ movie, overview, trailer, returnToMain }) => {
-
+const Page = ({ movie, overview, trailer }) => {
   return (
     <section className='movie-page'>
-      <img className='page-img'src={movie.backdrop_path} />
+      <img className='page-img'src={movie.backdrop_path} alt={movie.title} data-cy="page-image"/>
       <article className='side-info'>
-        <h2 className="movie-title">{movie.title}</h2>
+        <h2 className="movie-title" data-cy="page-movie-title">{movie.title}</h2>
         <h3 className="movie-rating">Audience Rating: {Math.round(movie.average_rating)}</h3>
-        <div className="video-responsive">
-         <iframe
-           width="400"
-           height="240"
-           src={`https://www.youtube.com/embed/${trailer}`}
-           frameBorder="0"
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-           allowFullScreen
-           title="Embedded youtube"
-           />
-        </div>
+        <Video trailer={trailer} />
         <p className="movie-plot">{overview}</p>
-        <button onClick={() =>returnToMain()}>Return to All Movies!</button>
+        <Link to="/"><button data-cy="return-button">Return to All Movies!</button></Link>
       </article>
     </section>
   )

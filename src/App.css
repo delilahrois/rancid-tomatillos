@@ -6,6 +6,8 @@ body {
   color: white;
   padding-bottom: 40px;
   font-family: 'Economica', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -17,9 +19,16 @@ h1 {
   opacity: 80%;
   text-shadow: 5px;
   font-family: 'Unica One', cursive;
+  /* position: fixed; */
 }
 
 main {
   color: #FFDAC6;
   font-family: 'Economica', sans-serif;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
 }

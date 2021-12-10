@@ -19,6 +19,9 @@ class App extends Component {
 
   componentDidMount = () => {
     return allMoviesData().then(data => this.setState({ movies: data.movies }))
+            .catch(err => {
+                this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+              })
     }
 
   displayMovie = (id) => {
@@ -27,7 +30,13 @@ class App extends Component {
     })
     this.setState({ singleMovie: movieDetails })
      movieOverview(id).then(data => {this.setState({ movieOverview: data.movie.overview })})
+       .catch(err => {
+           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+         })
      movieVideo(id).then(data => {this.setState({ trailer: data.videos[0] })})
+       .catch(err => {
+           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+         })
   }
 
   render() {

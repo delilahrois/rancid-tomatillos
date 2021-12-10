@@ -3,6 +3,7 @@ import Library from './Library'
 import Page from './Page'
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
+import { allMoviesData, movieOverview, movieVideo } from './api-calls.js'
 
 class App extends Component {
   constructor() {
@@ -17,34 +18,16 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({ movies: data.movies })
-    })
-    .catch(err => {
-      console.log(err)
-      this.setState({ error: err })
-    })
-  }
+    return allMoviesData().then(data => this.setState({ movies: data.movies }))
+    }
 
   displayMovie = (id) => {
     const movieDetails = this.state.movies.find((movie) => {
       return movie.id === id;
     })
     this.setState({ singleMovie: movieDetails })
-
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-        .then(response => response.json())
-        .then(data => {
-          this.setState({ movieOverview: data.movie.overview })
-        })
-
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-          .then(response => response.json())
-          .then(data => {
-            this.setState({ trailer: data.videos[0] })
-          })
+     movieOverview(id).then(data => {this.setState({ movieOverview: data.movie.overview })})
+     movieVideo(id).then(data => {this.setState({ trailer: data.videos[0] })})
   }
 
   render() {

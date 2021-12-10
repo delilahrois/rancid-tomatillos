@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import Library from './Library'
-import Page from './Page'
-import { Routes, Route } from 'react-router-dom';
-import './App.css'
+import React, { Component } from 'react';
+import Library from './Library';
+import Page from './Page';
+import Input from './Input';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       movies: [],
       singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
       trailer: '',
       movieOverview: '',
-      error: ''
+      error: '',
     }
   }
 
@@ -47,11 +48,25 @@ class App extends Component {
           })
   }
 
+  // setInputs = (filtered) => {
+  //   this.setState({ movies: filtered })
+  // }
+
+  setMovie = (found) => {
+    const movieId = this.state.movies.find((movie) => {
+      return movie.title === found;
+    }).id
+    this.displayMovie(movieId)
+  }
+
   render() {
-    return (
+    return (  
       <main>
-        <h1>Rancid Tomatillos</h1>
+        <NavLink to={`/`} style={{textDecoration: 'none'}}>
+          <h1 class="header">Rancid Tomatillos</h1>
+        </NavLink>
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
+        <Input setMovie={this.setMovie} setInputs={this.setInputs} movies={this.state.movies}/>
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie}/>}/>
           <Route path="/:movieId" element={<Page movie={this.state.singleMovie}

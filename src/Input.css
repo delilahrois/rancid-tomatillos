@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+button {
+  height: 30px;
+  font-weight: bold;
+}
+
+button, input, select {
+  padding: 5px;
+  margin: 5px;
+}

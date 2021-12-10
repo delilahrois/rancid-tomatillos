@@ -1,7 +1,7 @@
-import React from 'react'
-import Movie from './Movie'
+import React from 'react';
+import Movie from './Movie';
 import { Link } from 'react-router-dom';
-import './Library.css'
+import './Library.css';
 
 const Library = ({ movies, displayMovie }) => {
   const moviePosters = movies.map(movie => {
@@ -25,4 +25,4 @@ const Library = ({ movies, displayMovie }) => {
   )
 }
 
-export default Library
+export default Library;

@@ -12,7 +12,7 @@ const Page = ({ movie, overview, trailer }) => {
         <h3 className="movie-rating">Audience Rating: {Math.round(movie.average_rating)}</h3>
         <Video trailer={trailer}/>
         <p className="movie-plot">{overview}</p>
-        <Link to="/"><button>Return to All Movies!</button></Link>
+        <Link to="/" onClick={() => {this.props.refresh()}}><button>Return to All Movies!</button></Link>
       </article>
     </section>
   )

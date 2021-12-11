@@ -1,7 +1,6 @@
 import { React, Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './Input.css'
-// import Filter from './Filter';
 
 class Input extends Component {
   constructor() {
@@ -16,11 +15,16 @@ class Input extends Component {
     this.setState({ searchInput: e.target.value })
   }
 
-  findMovie = () => {
-    const foundMovie = this.props.movies.find((movie) => {
-      return movie.title === this.state.searchInput || movie.title === this.state.searchInput.toLowerCase() || movie.title === this.state.searchInput.toUpperCase();
-    })
-    this.props.setMovie(foundMovie)
+  findMovie = (e) => {
+    e.preventDefault();
+    if(this.state.searchInput) {
+      const foundMovie = this.props.movies.find((movie) => {
+        return movie.title === this.state.searchInput || movie.title === this.state.searchInput.toLowerCase() || movie.title === this.state.searchInput.toUpperCase();
+      })
+      this.props.setSingleMovie(foundMovie.id)
+    } else {
+      this.props.refresh();
+    }
   }
 
   // filterMovie = (e) => { 
@@ -42,7 +46,7 @@ class Input extends Component {
         <form>
           <label for="searchInput"></label>
           <input class="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
-          <button class="search-btn" onClick={() => {this.findMovie()}}>Search</button>
+          <button class="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
         </form>
         <form>
           <label for="ratingSelect"></label>

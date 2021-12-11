@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import Library from './Library';
-import Page from './Page';
+import React, { Component } from 'react'
+import Library from './Library'
+import Page from './Page'
+import './App.css'
+import { allMoviesData, movieOverview, movieVideo } from './api-calls.js'
 import Input from './Input';
 import { Routes, Route, NavLink } from 'react-router-dom';
-import './App.css';
+
 
 class App extends Component {
   constructor() {
@@ -20,17 +22,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({ movies: data.movies, isLoaded: true })
-
-    })
-    .catch(err => {
-      console.log(err)
-      this.setState({ error: err })
-    })
-  }
+    return allMoviesData().then(data => this.setState({ movies: data.movies, isLoaded: true }))
+            .catch(err => {
+                this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+              })
+    }
 
   displayMovie = (id) => {
     const movieDetails = this.state.movies.find((movie) => {
@@ -38,18 +34,15 @@ class App extends Component {
     })
     this.setState({ singleMovie: movieDetails })
 
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ movieOverview: data.movie.overview })
-    })
+     movieOverview(id).then(data => {this.setState({ movieOverview: data.movie.overview })})
+       .catch(err => {
+           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+         })
+     movieVideo(id).then(data => {this.setState({ trailer: data.videos[0] })})
+       .catch(err => {
+           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+         })
 
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ trailer: data.videos[0] })
-    })
-  }
 
   setSingleMovie = (id) => {
     const movieDetails = this.state.movies.find((movie) => {

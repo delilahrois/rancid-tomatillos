@@ -12,9 +12,14 @@
   height: 250px;
 }
 
+.poster-img:hover {
+  transform: scale(1.2)
+}
+
 .poster-title,
 .poster-rating {
   margin: 2px;
+  text-decoration: none;
 }
 
 .poster-title {

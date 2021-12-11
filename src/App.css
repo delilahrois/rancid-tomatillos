@@ -10,7 +10,7 @@ body {
   width: 100%;
 }
 
-h1 {
+.header {
   display: flex;
   justify-content: space-around;
   margin: 40px;
@@ -19,6 +19,7 @@ h1 {
   opacity: 80%;
   text-shadow: 5px;
   font-family: 'Unica One', cursive;
+  text-decoration: none;
 }
 
 main {

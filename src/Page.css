@@ -5,7 +5,6 @@
 }
 
 button {
-  height: 60px;
   background-color: #BABD8D;
   font-family: 'Economica', sans-serif;
   color: black;
@@ -13,6 +12,7 @@ button {
   border: 0px;
   padding: 5px;
   font-size: 1.5vw;
+  text-decoration: none;
 }
 
 .side-info {
@@ -36,4 +36,9 @@ button {
 
 .movie-plot {
   font-size: 1.5vw;
+}
+
+.return-button {
+  height: 70px;
+  width: 8vw;
 }

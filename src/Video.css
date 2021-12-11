@@ -1,0 +1,9 @@
+.no-trailer {
+  align-items: center;
+  background-color: white;
+  color: black;
+  display: flex;
+  height: 12vh;
+  padding: 4px;
+  width: 14vw;
+}

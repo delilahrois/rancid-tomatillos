@@ -4,6 +4,8 @@ import Video from './Video'
 import './Page.css';
 
 const Page = ({ movie, overview, trailer }) => {
+  console.log(overview)
+  // {!overview && overview = 'There is currently no information for this movie. Sorry!'}
   return (
     <section className='movie-page'>
       <img className='page-img'src={movie.backdrop_path} alt={movie.title}/>
@@ -12,7 +14,7 @@ const Page = ({ movie, overview, trailer }) => {
         <h3 className="movie-rating">Audience Rating: {Math.round(movie.average_rating)}</h3>
         <Video trailer={trailer}/>
         <p className="movie-plot">{overview}</p>
-        <Link to="/" onClick={() => {this.props.refresh()}}><button>Return to All Movies!</button></Link>
+        <Link to="/" onClick={() => {this.props.refresh()}}><button className='return-button'>Return to All Movies!</button></Link>
       </article>
     </section>
   )

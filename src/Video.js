@@ -1,7 +1,12 @@
 import React from 'react'
 
 const Video = (trailer) => {
-console.log(trailer)
+// console.log("here", trailer.trailer)
+// {!trailer && return (
+//   <div className='no-trailer'>
+//     <h3>Sorry, no movie preview available at this time!</h3>
+//   </div>
+// )}
 let videoURL;
 {trailer.trailer.site === 'YouTube' ? videoURL = (`https://www.youtube.com/embed/${trailer.trailer.key}`) : videoURL = (`https://player.vimeo.com/video/${trailer.trailer.key}`)}
   return (

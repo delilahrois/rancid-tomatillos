@@ -13,7 +13,7 @@ body {
 .header {
   display: flex;
   justify-content: space-around;
-  margin: 40px;
+  margin: 40px 40px 0;
   font-size: 4.8vw;
   color: #e6c613;
   opacity: 80%;
@@ -25,4 +25,11 @@ body {
 main {
   color: #FFDAC6;
   font-family: 'Economica', sans-serif;
+}
+
+.error-message {
+  font-size: 2vw;
+  margin-top: 0;
+  text-align: center;
+
 }

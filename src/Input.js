@@ -6,7 +6,7 @@ class Input extends Component {
   constructor() {
     super();
     this.state = {
-      searchInput: '', 
+      searchInput: '',
       rating: ''
     }
   }
@@ -23,7 +23,7 @@ class Input extends Component {
     e.preventDefault();
     if(this.state.searchInput) {
       const foundMovie = this.props.movies.find((movie) => {
-        return movie.title === this.state.searchInput || movie.title === this.state.searchInput.toLowerCase() || movie.title === this.state.searchInput.toUpperCase();
+        return movie.title.toLowerCase() === this.state.searchInput.toLowerCase();
       })
       this.props.setSingleMovie(foundMovie.id)
     } else {
@@ -31,7 +31,7 @@ class Input extends Component {
     }
   }
 
-  filterMovie = (e) => { 
+  filterMovie = (e) => {
     e.preventDefault();
     if(this.state.rating) {
       const filteredMovies = this.props.movies.filter((movie) => {

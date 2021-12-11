@@ -12,14 +12,19 @@ form {
 input, select {
   font-family: 'Economica', sans-serif;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: 1.4vw;
   border: 0px;
   border-radius: 5px;
 }
 button {
-  height: 30px;
-  font-size: 1vw;
+  align-items: center;
+  display: flex;
+  font-size: 1.4vw;
   font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: 1.2px;
+  width: 56px;
 }
 
 button, input, select {

@@ -42,7 +42,7 @@ class App extends Component {
        .catch(err => {
            this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
          })
-
+}
 
   setSingleMovie = (id) => {
     const movieDetails = this.state.movies.find((movie) => {
@@ -76,12 +76,12 @@ class App extends Component {
   }
 
   render() {
-    return (  
+    return (
       <main>
         <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
           <h1 class="header">Rancid Tomatillos</h1>
         </NavLink>
-        { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
+      <p className='error-message'>{this.state.error}</p>
         <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/>}/>

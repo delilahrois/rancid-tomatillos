@@ -8,8 +8,17 @@ form {
   display: flex;
   justify-content: center;
 }
+
+input, select {
+  font-family: 'Economica', sans-serif;
+  font-weight: bold;
+  font-size: 1vw;
+  border: 0px;
+  border-radius: 5px;
+}
 button {
   height: 30px;
+  font-size: 1vw;
   font-weight: bold;
 }
 

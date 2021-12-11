@@ -15,6 +15,10 @@ class Input extends Component {
     this.setState({ searchInput: e.target.value })
   }
 
+  setRating = (e) => {
+    this.setState({ rating: e.target.value })
+  }
+
   findMovie = (e) => {
     e.preventDefault();
     if(this.state.searchInput) {
@@ -27,18 +31,24 @@ class Input extends Component {
     }
   }
 
-  // filterMovie = (e) => { 
-  //   const filteredMovies = this.props.movies.filter((movie) => {
-  //     if(e.target.value === 'low') {
-  //       return movie.rating < 5;
-  //     } else if (e.target.value === 'mid') {
-  //       return movie.rating >= 5 && movie.rating < 6;
-  //     } else {
-  //       return movie.rating > 6;
-  //     }
-  //   })
-  //   this.props.setInputs(filteredMovies)
-  // }
+  filterMovie = (e) => { 
+    e.preventDefault();
+    if(this.state.rating) {
+      const filteredMovies = this.props.movies.filter((movie) => {
+        console.log(this.state.rating)
+        if(this.state.rating === 'low') {
+          return movie.average_rating < 5;
+        } else if (this.state.rating === 'mid') {
+          return movie.average_rating >= 5 && movie.average_rating < 6;
+        } else {
+          return movie.average_rating > 6;
+        }
+      })
+      this.props.setFilteredMovies(filteredMovies)
+    } else {
+      this.props.refresh();
+    }
+  }
 
   render() {
     return (
@@ -50,13 +60,13 @@ class Input extends Component {
         </form>
         <form>
           <label for="ratingSelect"></label>
-          <select class="input" id="ratingSelect" >
+          <select class="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
             <option>Rating</option>
             <option value="low">Low</option>
             <option value="average">Average</option>
             <option value="high">High</option>
           </select>
-          <button onClick={(e) => {this.filterMovie(e)}}></button>
+          <button onClick={(e) => {this.filterMovie(e)}}>Filter</button>
       </form>
       </div>
     )

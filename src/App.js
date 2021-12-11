@@ -60,6 +60,13 @@ class App extends Component {
     }
   }
 
+  setFilteredMovies = (filteredMovies) => {
+    console.log(filteredMovies)
+    if(filteredMovies) {
+      this.setState({ foundMovies: [ filteredMovies ] })
+    }
+  }
+
   refreshState = () => {
     this.setState(
       {
@@ -82,7 +89,7 @@ class App extends Component {
           <h1 class="header">Rancid Tomatillos</h1>
         </NavLink>
         { this.state.error && <p>Oops! Something went wrong. Refresh and try again.</p> }
-        <Input setSingleMovie={this.setSingleMovie} setInputs={this.setInputs} movies={this.state.movies} refresh={this.refreshState}/>
+        <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/>}/>
           <Route path="/:movieId" element={<Page movie={this.state.singleMovie}

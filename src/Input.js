@@ -44,6 +44,7 @@ class Input extends Component {
           return movie.average_rating > 6;
         }
       })
+      console.log("here", filteredMovies)
       this.props.setFilteredMovies(filteredMovies)
     } else {
       this.props.refresh();

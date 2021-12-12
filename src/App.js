@@ -54,26 +54,25 @@ class App extends Component {
   }
 
   setFilteredMovies = (filteredMovies) => {
-    console.log(filteredMovies)
     if(filteredMovies) {
       this.setState({ foundMovies:  filteredMovies  })
     }
   }
 
-  refreshState = () => {
-    this.setState(
-      {
-        movies: [],
-        singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
-        trailer: '',
-        movieOverview: '',
-        error: '',
-        isLoaded: false,
-        foundMovies: []
-      }
-    )
-    this.componentDidMount();
-  }
+  // refreshState = () => {
+  //   this.setState(
+  //     {
+  //       movies: [],
+  //       singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
+  //       trailer: '',
+  //       movieOverview: '',
+  //       error: '',
+  //       isLoaded: false,
+  //       foundMovies: []
+  //     }
+  //   )
+  //   this.componentDidMount();
+  // }
 
   render() {
     return (
@@ -86,7 +85,7 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/>}/>
           <Route path="/:movieId" element={<Page movie={this.state.singleMovie}
-            trailer={this.state.trailer} overview={this.state.movieOverview} key={this.state.singleMovie.id} refresh={this.refreshState}/>}/>
+            trailer={this.state.trailer} overview={this.state.movieOverview} key={this.state.singleMovie.id} />}/>
         </Routes>
       </main>
     )

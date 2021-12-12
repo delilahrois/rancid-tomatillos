@@ -23,11 +23,11 @@ class Input extends Component {
     e.preventDefault();
     if(this.state.searchInput) {
       const foundMovie = this.props.movies.find((movie) => {
-        return movie.title.toLowerCase() === this.state.searchInput.toLowerCase();
+        return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
       })
       this.props.setSingleMovie(foundMovie.id)
     } else {
-      this.props.refresh();
+      // this.props.refreshState();
     }
   }
 
@@ -35,7 +35,6 @@ class Input extends Component {
     e.preventDefault();
     if(this.state.rating) {
       const filteredMovies = this.props.movies.filter((movie) => {
-        console.log(this.state.rating)
         if(this.state.rating === 'low') {
           return movie.average_rating < 5;
         } else if (this.state.rating === 'mid') {
@@ -44,10 +43,9 @@ class Input extends Component {
           return movie.average_rating > 6;
         }
       })
-      console.log("here", filteredMovies)
       this.props.setFilteredMovies(filteredMovies)
     } else {
-      this.props.refresh();
+      // this.props.refreshState();
     }
   }
 

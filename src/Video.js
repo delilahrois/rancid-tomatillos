@@ -2,7 +2,6 @@ import React from 'react'
 import './Video.css'
 
 const Video = (trailer) => {
-  console.log(trailer)
 if(!trailer.trailer) {
   return (
     <div className='no-trailer'>

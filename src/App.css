@@ -10,13 +10,18 @@ body {
   width: 100%;
 }
 
+header {
+  background-color: #0A0905;
+  position: fixed;
+  width: 100vw;
+}
 .header {
   display: flex;
   justify-content: space-around;
-  margin: 40px 40px 0;
+  margin: 0 40px;
   font-size: 4.8vw;
-  color: #e6c613;
-  opacity: 80%;
+  color: #BB9F0F;
+  position: fixed;
   text-shadow: 5px;
   font-family: 'Unica One', cursive;
   text-decoration: none;

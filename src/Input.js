@@ -22,10 +22,10 @@ class Input extends Component {
   findMovie = (e) => {
     e.preventDefault();
     if(this.state.searchInput) {
-      const foundMovie = this.props.movies.find((movie) => {
+      const foundMovie = this.props.movies.filter((movie) => {
         return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
       })
-      this.props.setSingleMovie(foundMovie.id)
+      this.props.setFilteredMovies(foundMovie)
     } else {
       // this.props.refreshState();
     }

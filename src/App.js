@@ -16,7 +16,7 @@ class App extends Component {
       trailer: '',
       movieOverview: '',
       error: '',
-      isLoaded: false,
+      // isLoaded: false,
       foundMovies: []
     }
   }
@@ -44,18 +44,18 @@ class App extends Component {
          })
 }
 
-  setSingleMovie = (id) => {
-    const movieDetails = this.state.movies.find((movie) => {
-      return movie.id === id;
-    })
-    if(id) {
-      this.setState({ foundMovies: [ movieDetails ] })
-    }
-  }
+  // setSingleMovie = (id) => {
+  //   const movieDetails = this.state.movies.find((movie) => {
+  //     return movie.id === id;
+  //   })
+  //   if(id) {
+  //     this.setState({ foundMovies: [ movieDetails ] })
+  //   }
+  // }
 
   setFilteredMovies = (filteredMovies) => {
     if(filteredMovies) {
-      this.setState({ foundMovies:  filteredMovies  })
+      this.setState({ movies:  filteredMovies  })
     }
   }
 

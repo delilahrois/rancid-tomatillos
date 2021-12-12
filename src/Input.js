@@ -13,6 +13,7 @@ class Input extends Component {
 
   setInput = (e) => {
     this.setState({ searchInput: e.target.value })
+    this.findMovie(this.state.searchInput)
   }
 
   setRating = (e) => {
@@ -20,14 +21,14 @@ class Input extends Component {
   }
 
   findMovie = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if(this.state.searchInput) {
       const foundMovie = this.props.movies.filter((movie) => {
         return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
       })
       this.props.setFilteredMovies(foundMovie)
     } else {
-      // this.props.refreshState();
+      // this.props.refresh();
     }
   }
 

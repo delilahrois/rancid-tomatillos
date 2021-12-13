@@ -38,7 +38,7 @@ class Input extends Component {
       const filteredMovies = this.props.movies.filter((movie) => {
         if(this.state.rating === 'low') {
           return movie.average_rating < 5;
-        } else if (this.state.rating === 'mid') {
+        } else if (this.state.rating === 'average') {
           return movie.average_rating >= 5 && movie.average_rating < 6;
         } else {
           return movie.average_rating > 6;
@@ -46,7 +46,7 @@ class Input extends Component {
       })
       this.props.setFilteredMovies(filteredMovies)
     } else {
-      // this.props.refreshState();
+      // this.props.refresh();
     }
   }
 

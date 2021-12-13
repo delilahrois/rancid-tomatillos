@@ -55,7 +55,7 @@ class App extends Component {
 
   setFilteredMovies = (filteredMovies) => {
     if(filteredMovies) {
-      this.setState({ movies:  filteredMovies  })
+      this.setState({ foundMovies:  filteredMovies  })
     }
   }
 

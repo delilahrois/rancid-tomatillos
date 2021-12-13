@@ -16,7 +16,6 @@ class App extends Component {
       trailer: '',
       movieOverview: '',
       error: '',
-      // isLoaded: false,
       foundMovies: []
     }
   }
@@ -78,7 +77,7 @@ class App extends Component {
     return (
       <main>
         <header>
-          <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
+          <NavLink to={`/`} style={{textDecoration: 'none'}}>
             <h1 className="header">Rancid Tomatillos</h1>
           </NavLink>
           <p className='error-message'>{this.state.error}</p>

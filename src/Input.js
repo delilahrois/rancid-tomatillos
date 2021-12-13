@@ -1,4 +1,5 @@
 import { React, Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Input.css'
 
 class Input extends Component {
@@ -20,22 +21,11 @@ class Input extends Component {
   }
 
   findMovie = () => {
+    // e.preventDefault();
     if(this.state.searchInput) {
-
-      // 2 possible ways to do this.
-        // 1. iterate through movie titles. split each title into separate words. then, split each word into letters, .toLowerCase() to check each letter as we type. 
-        // simultaneously iterate through the state.searchInput.toLowerCase(). 
-        // compare each index of the searchInput to the letters at each index of the movie titles to check if part of the movie actually BEGINS with those letters.
-
-      // iterate through movie titles and filter to check if 
-
+      document.getElementById('return-btn').classList.remove('hidden');
       const foundMovie = this.props.movies.filter((movie) => {
-        const movieTitle = movie.title.split(' ')
-        console.log(movieTitle)
-        const acceptedMovie = movieTitle.filter((word) => {
-          return word[0].includes(this.state.searchInput.toLowerCase())
-        })
-        return acceptedMovie
+        return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
       })
       this.props.setFilteredMovies(foundMovie)
     } else {
@@ -43,8 +33,38 @@ class Input extends Component {
     }
   }
 
+  // findMovie = () => {
+  //   if(this.state.searchInput || this.state.rating) {
+  //     document.getElementById('return-btn').classList.remove('hidden')
+  //   }
+  //   if(this.state.searchInput) {
+
+  //     // 2 possible ways to do this.
+  //       // 1. iterate through movie titles. split each title into separate words. then, split each word into letters, .toLowerCase() to check each letter as we type. 
+  //       // simultaneously iterate through the state.searchInput.toLowerCase(). 
+  //       // compare each index of the searchInput to the letters at each index of the movie titles to check if part of the movie actually BEGINS with those letters.
+
+  //     // iterate through movie titles and filter to check if 
+
+  //     const foundMovie = this.props.movies.filter((movie) => {
+  //       const movieTitle = movie.title.split(' ')
+  //       console.log(movieTitle)
+  //       const acceptedMovie = movieTitle.filter((word) => {
+  //         return word[0].includes(this.state.searchInput.toLowerCase())
+  //       })
+  //       return acceptedMovie
+  //     })
+  //     this.props.setFilteredMovies(foundMovie)
+  //   } else {
+  //     // this.props.refresh();
+  //   }
+  // }
+
   filterMovie = (e) => {
     e.preventDefault();
+    if(this.state.searchInput || this.state.rating) {
+      document.getElementById('return-btn').classList.remove('hidden')
+    }
     if(this.state.rating) {
       const filteredMovies = this.props.movies.filter((movie) => {
         if(this.state.rating === 'low') {
@@ -70,12 +90,12 @@ class Input extends Component {
     return (
       <div className="form-container">
         <form>
-          <label for="searchInput"></label>
+          <label htmlFor="searchInput"></label>
           <input className="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
           <button className="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
         </form>
         <form>
-          <label for="ratingSelect"></label>
+          <label htmlFor="ratingSelect"></label>
           <select className="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
             <option>Rating</option>
             <option value="low">Low</option>
@@ -83,7 +103,9 @@ class Input extends Component {
             <option value="high">High</option>
           </select>
           <button onClick={(e) => {this.filterMovie(e)}}>Filter</button>
-          <button className="return-btn" onClick={() => {this.returnToMovies()}}>Return to all movies</button>
+          <NavLink to={'/'} style={{ textDecoration: 'none' }} onClick={() => {this.returnToMovies()}}>
+            <button className="return-btn hidden" id="return-btn">View all movies</button>
+          </NavLink>
       </form>
       </div>
     )

@@ -35,3 +35,7 @@ button, .input {
 .reset-btn {
   height: 50px;
 }
+
+.hidden {
+  display: none;
+}

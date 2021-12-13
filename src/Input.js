@@ -1,5 +1,4 @@
 import { React, Component } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import './Input.css'
 
 class Input extends Component {
@@ -11,29 +10,32 @@ class Input extends Component {
     }
   }
 
-  setInput = (e) => {
-    this.setState({ searchInput: e.target.value })
+  setInput = async (e) => {
+    await this.setState({ searchInput: e.target.value })
     this.findMovie(this.state.searchInput)
+    if(this.state.searchInput === '') {
+      this.props.refresh()
+    }
   }
 
-  setRating = (e) => {
-    this.setState({ rating: e.target.value })
+  setRating = async (e) => {
+    await this.setState({ rating: e.target.value })
+    this.filterMovie(this.state.rating)
+    if(this.state.rating === 'rating') {
+      this.props.refresh()
+    }
   }
 
-  findMovie = (e) => {
-    // e.preventDefault();
+  findMovie = () => {
     if(this.state.searchInput) {
       const foundMovie = this.props.movies.filter((movie) => {
         return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
       })
       this.props.setFilteredMovies(foundMovie)
-    } else {
-      // this.props.refresh();
     }
   }
 
-  filterMovie = (e) => {
-    e.preventDefault();
+  filterMovie = () => {
     if(this.state.rating) {
       const filteredMovies = this.props.movies.filter((movie) => {
         if(this.state.rating === 'low') {
@@ -45,28 +47,29 @@ class Input extends Component {
         }
       })
       this.props.setFilteredMovies(filteredMovies)
-    } else {
-      // this.props.refresh();
     }
+  }
+
+  returnToMovies = () => {
+    this.setState({ searchInput: '', rating: '' });
+    this.props.componentDidMount();
   }
 
   render() {
     return (
-      <div class="form-container">
+      <div className="form-container">
         <form>
-          <label for="searchInput"></label>
-          <input class="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
-          <button class="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
+          <label htmlFor="searchInput"></label>
+          <input className="input" id="searchInput" type="text" placeholder="Search movies..." onChange={(e) => {this.setInput(e)}}></input>
         </form>
         <form>
-          <label for="ratingSelect"></label>
-          <select class="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
-            <option>Rating</option>
+          <label htmlFor="ratingSelect"></label>
+          <select className="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
+            <option value="rating" style={{color: 'grey'}} >Rating</option>
             <option value="low">Low</option>
             <option value="average">Average</option>
             <option value="high">High</option>
           </select>
-          <button onClick={(e) => {this.filterMovie(e)}}>Filter</button>
       </form>
       </div>
     )
@@ -74,3 +77,4 @@ class Input extends Component {
 }
 
 export default Input;
+

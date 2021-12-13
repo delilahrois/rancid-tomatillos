@@ -1,30 +1,28 @@
 body {
-  background-color: linear-gradient(grey, 10%, black);
+  background-image: url('../gradient.jpeg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: white;
-  padding-bottom: 40px;
   font-family: 'Economica', sans-serif;
   height: 100%;
-  width: 100%;
   overflow: hidden;
+  padding-bottom: 40px;
+  width: 100%;
 }
 
 header {
-  background-color: black;
   width: 100vw;
   padding: 2vh 0;
 }
 
 .header {
   display: flex;
+  color: #ADFF2F;
+  font-family: 'Unica One';
+  font-size: 4.8vw;
   justify-content: space-around;
   margin: 20px 40px 0;
-  font-size: 4.8vw;
-  color: #BB9F0F;
-  text-shadow: 5px;
-  font-family: 'Unica One';
   text-decoration: none;
   letter-spacing: 10px;
   animation: text 2s 1;

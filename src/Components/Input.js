@@ -1,5 +1,5 @@
 import { React, Component } from 'react';
-import './Input.css'
+import '../CSS/Input.css'
 
 class Input extends Component {
   constructor() {
@@ -77,4 +77,3 @@ class Input extends Component {
 }
 
 export default Input;
-

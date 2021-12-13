@@ -1,6 +1,6 @@
 form {
-  display: flex;
   align-items: center;
+  display: flex;
   margin: 0px 20px;
 }
 
@@ -11,11 +11,11 @@ form {
 }
 
 .input {
-  font-family: 'Economica', sans-serif;
-  font-weight: bold;
-  font-size: 1.4vw;
   border: 0px;
   border-radius: 5px;
+  font-family: 'Economica', sans-serif;
+  font-size: 1.4vw;
+  font-weight: bold;
 }
 
 button {
@@ -28,8 +28,8 @@ button {
 }
 
 button, .input {
-  padding: 5px;
   margin: 5px;
+  padding: 5px;
 }
 
 .reset-btn {

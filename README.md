@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Turing School of Software & Design
 
-## Available Scripts
+2108 FEE, Mod 3 - Partner project
 
-In the project directory, you can run:
+## Abstract
+Rancid Tomatillos is a web app that allows users to search movie ratings, read movie plots and view movie trailers.
 
-### `npm start`
+## Languages | Technologies
+- React
+- Router
+- JSX
+- Cypress
+- HTML
+- CSS
+- GitHub
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Install & Setup
+1. Clone down this repository
+2. `cd` into the directory
+3. Run `npm start`
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Web App Attributes
+1. On load, users will see a dashboard populate with a large list of movies. They can scroll through these movies.
+2. Users can also see a 'Search movies...' input bar as well as a dropdown to search by movie rating.
+3. Users can click on an individual movie which will take them to a single movie page. This page will display the movie plot, rating as well as a movie trailer video they can watch. Some movies do not have video trailers.
+4. On the single movie page, users can click the 'Return to All Movies' button to return back to main page. They can also click the 'back-arrow'.
+5. On the main dashboard page, users can begin typing a title of a movie into the search bar. Videos will populate on key strokes. When the input is empty, all movies will display.
+6. Users can choose an option on the dropdown to sort movies by their audience rating.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Main Page view
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Search Feature
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Rating Feature
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Single Movie Page preview
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Iterations | Improvements
+1.
+2.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Project Spec & Rubric
+[Here]
 
-## Learn More
+## Authors | Contributors | Developers
+[Delilah Necrason](https://github.com/delilahrois)
+[Michele Comfort](https://github.com/michelecomfort)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Images
+Background tomatillos photo from [Adobe Stock Photo](https://stock.adobe.com/)

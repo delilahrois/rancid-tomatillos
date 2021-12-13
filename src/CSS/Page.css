@@ -6,12 +6,12 @@
 
 button {
   background-color: #BABD8D;
-  font-family: 'Economica', sans-serif;
-  color: black;
-  border-radius: 5px;
   border: 0px;
-  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  font-family: 'Economica', sans-serif;
   font-size: 1.5vw;
+  padding: 5px;
   text-decoration: none;
 }
 
@@ -39,6 +39,7 @@ button {
   margin: 0px;
   font-size: 2.8vw;
   font-family: 'Unica One', cursive;
+  font-size: 2.5vw;
 }
 
 .movie-rating {

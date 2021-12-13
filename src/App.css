@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://st2.depositphotos.com/6434168/45377/i/600/depositphotos_453772676-stock-photo-three-tomatillos-lined-black-background.jpg);
+  background-color: linear-gradient(grey, 10%, black);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -12,8 +12,9 @@ body {
 }
 
 header {
-  background-color: #0A0905;
+  background-color: black;
   width: 100vw;
+  padding: 2vh 0;
 }
 
 .header {

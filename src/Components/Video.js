@@ -1,5 +1,5 @@
 import React from 'react'
-import './Video.css'
+import '../CSS/Video.css'
 
 const Video = (trailer) => {
 if(!trailer.trailer) {

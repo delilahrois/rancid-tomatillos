@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Library from './Library';
 import Page from './Page';
-import './App.css';
+import '../CSS/App.css';
 import { allMoviesData, movieOverview, movieVideo } from './api-calls.js';
 import Input from './Input';
 import { Routes, Route, NavLink } from 'react-router-dom';
@@ -49,8 +49,8 @@ class App extends Component {
     }
   }
 
-  refreshState = async () => {
-    await this.setState(
+  refreshState =  () => {
+    this.setState(
       {
         movies: [],
         singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},

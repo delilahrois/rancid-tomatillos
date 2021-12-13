@@ -1,5 +1,5 @@
 import React from 'react';
-import './Movie.css';
+import '../CSS/Movie.css';
 
 const Movie = ({ posterImg, title, id, displayMovie }) => {
   return(

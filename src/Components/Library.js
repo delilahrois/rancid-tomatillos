@@ -1,7 +1,7 @@
 import React from 'react';
 import Movie from './Movie';
 import { Link } from 'react-router-dom';
-import './Library.css';
+import '../CSS/Library.css';
 
 const Library = ({ movies, displayMovie, foundMovies }) => {
   let moviePosters;
@@ -35,19 +35,6 @@ const Library = ({ movies, displayMovie, foundMovies }) => {
     })
 
   }
-  // const moviePosters = movies.map(movie => {
-  //   return (
-  //     <Link to={`/${movie.id}`} key={movie.id}>
-  //       <Movie
-  //         posterImg={movie.poster_path}
-  //         title={movie.title}
-  //         rating={Math.round(movie.average_rating)}
-  //         id={movie.id}
-  //         displayMovie={displayMovie}
-  //       />
-  //     </Link>
-  //   )
-  // })
 
   return (
     <div className='movie-grid'>

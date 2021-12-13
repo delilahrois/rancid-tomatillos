@@ -1,8 +1,8 @@
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  height: 75vh;
   margin-top: 50px;
   padding: 0 80px;
-  height: 75vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }

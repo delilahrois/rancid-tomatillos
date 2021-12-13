@@ -1,28 +1,23 @@
 body {
-  background-image: url(https://st2.depositphotos.com/6434168/45377/i/600/depositphotos_453772676-stock-photo-three-tomatillos-lined-black-background.jpg);
+  background-image: url('../gradient.jpeg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: white;
-  padding-bottom: 40px;
   font-family: 'Economica', sans-serif;
   height: 100%;
-  width: 100%;
   overflow: hidden;
+  padding-bottom: 40px;
+  width: 100%;
 }
 
-header {
-  background-color: #0A0905;
-  width: 100vw;
-}
 .header {
   display: flex;
+  color: #ADFF2F;
+  font-family: 'Unica One';
+  font-size: 4.8vw;
   justify-content: space-around;
   margin: 20px 40px 0;
-  font-size: 4.8vw;
-  color: #BB9F0F;
-  text-shadow: 5px;
-  font-family: 'Unica One';
   text-decoration: none;
 }
 
@@ -35,5 +30,4 @@ main {
   font-size: 2vw;
   margin-top: 0;
   text-align: center;
-
 }

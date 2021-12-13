@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Video from './Video'
-import './Page.css';
+import '../CSS/Page.css';
 
-const Page = ({ movie, overview, trailer }) => {
-  console.log(overview)
-  // {!overview && overview = 'There is currently no information for this movie. Sorry!'}
+const Page = ({ movie, overview, trailer }) => {  
   return (
     <section className='movie-page'>
       <img className='page-img'src={movie.backdrop_path} alt={movie.title}/>

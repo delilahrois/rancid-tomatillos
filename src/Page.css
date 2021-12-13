@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 40px;
+  /* position: absolute; */
 }
 
 button {
@@ -22,7 +23,7 @@ button {
 }
 
 .page-img {
-  height: 30vw;
+  height: 35vw;
 }
 
 .movie-title {

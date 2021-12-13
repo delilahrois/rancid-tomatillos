@@ -49,8 +49,8 @@ class App extends Component {
     }
   }
 
-  refreshState = async () => {
-    await this.setState(
+  refreshState = () => {
+    this.setState(
       {
         movies: [],
         singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},

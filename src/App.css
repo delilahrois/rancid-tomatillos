@@ -15,6 +15,7 @@ header {
   background-color: #0A0905;
   width: 100vw;
 }
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -24,6 +25,8 @@ header {
   text-shadow: 5px;
   font-family: 'Unica One';
   text-decoration: none;
+  letter-spacing: 10px;
+  animation: text 3s 1;
 }
 
 main {
@@ -35,4 +38,13 @@ main {
   font-size: 2vw;
   margin-top: 0;
   text-align: center;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+  }
+  30% {
+    letter-spacing: 30px;
+  }
 }

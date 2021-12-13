@@ -8,7 +8,7 @@ body {
   font-family: 'Economica', sans-serif;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 header {
@@ -35,5 +35,4 @@ main {
   font-size: 2vw;
   margin-top: 0;
   text-align: center;
-
 }

@@ -18,15 +18,16 @@ button {
 .side-info {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding-left: 2vw;
 }
 
 .page-img {
-  height: 540px;
+  height: 30vw;
 }
 
 .movie-title {
-  font-size: 2.5vw;
+  margin: 0px;
+  font-size: 2.8vw;
   font-family: 'Unica One', cursive;
 }
 

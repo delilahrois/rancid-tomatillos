@@ -65,7 +65,7 @@ class Input extends Component {
         <form>
           <label htmlFor="ratingSelect"></label>
           <select className="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
-            <option value="rating" style={{color: 'grey'}} >Rating</option>
+            <option value="rating" style={{color: 'grey'}}>Rating</option>
             <option value="low">Low</option>
             <option value="average">Average</option>
             <option value="high">High</option>

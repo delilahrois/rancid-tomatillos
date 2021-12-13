@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   padding: 40px;
-  /* overflow: scroll; */
 }
 
 button {
@@ -21,10 +20,9 @@ button {
   flex-direction: column;
   padding-left: 1.5vw;
   height: 35vw;
-  /* border: 2px solid pink; */
   overflow: overlay;
   scrollbar-width: thin;
-  scrollbar-color: black grey;
+  scrollbar-color: grey black;
 }
 
 .title-container {
@@ -49,7 +47,6 @@ button {
 
 .movie-plot {
   font-size: 1.5vw;
-  /* width: 25vw; */
   width: 90%;
 }
 

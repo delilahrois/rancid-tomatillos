@@ -6,7 +6,7 @@ class Input extends Component {
     super();
     this.state = {
       searchInput: '',
-      rating: ''
+      rating: 'rating'
     }
   }
 
@@ -64,8 +64,8 @@ class Input extends Component {
         </form>
         <form>
           <label htmlFor="ratingSelect"></label>
-          <select className="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
-            <option value="rating" style={{color: 'grey'}}>Rating</option>
+          <select className="input" id="ratingSelect" style={{color: this.state.rating === 'rating' ? 'grey' : 'black'}} onChange={(e) => {this.setRating(e)}} >
+            <option value="rating">Rating</option>
             <option value="low">Low</option>
             <option value="average">Average</option>
             <option value="high">High</option>

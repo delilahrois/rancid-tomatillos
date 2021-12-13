@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 75vh;
-  margin-top: 20px;
+  margin-top: 18px;
   padding: 0 80px;
   overflow-y: scroll;
 }

@@ -7,7 +7,7 @@ form {
 .form-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .input {
@@ -39,4 +39,3 @@ button, .input {
 .hidden {
   display: none;
 }
-

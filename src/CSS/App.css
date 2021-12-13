@@ -13,7 +13,7 @@ body {
 
 header {
   width: 100vw;
-  padding: 2vh 0;
+  padding: .6vh 0;
 }
 
 .header {
@@ -29,7 +29,7 @@ header {
 }
 
 main {
-  color: #FFDAC6;
+  color: #f1fce6;
   font-family: 'Economica', sans-serif;
 }
 

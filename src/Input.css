@@ -10,7 +10,7 @@ form {
   margin-top: 30px;
 }
 
-input, select {
+.input {
   font-family: 'Economica', sans-serif;
   font-weight: bold;
   font-size: 1.4vw;
@@ -28,7 +28,7 @@ button {
   width: 56px;
 }
 
-button, input, select {
+button, .input {
   padding: 5px;
   margin: 5px;
 }

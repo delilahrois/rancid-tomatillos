@@ -35,7 +35,6 @@ class Input extends Component {
         const acceptedMovie = movieTitle.filter((word) => {
           return word[0].includes(this.state.searchInput.toLowerCase())
         })
-        // console.log(acceptedMovie)
         return acceptedMovie
       })
       this.props.setFilteredMovies(foundMovie)
@@ -62,23 +61,29 @@ class Input extends Component {
     }
   }
 
+  returnToMovies = () => {
+    this.setState({ searchInput: '', rating: '' });
+    this.props.componentDidMount();
+  }
+
   render() {
     return (
-      <div class="form-container">
+      <div className="form-container">
         <form>
           <label for="searchInput"></label>
-          <input class="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
-          <button class="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
+          <input className="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
+          <button className="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
         </form>
         <form>
           <label for="ratingSelect"></label>
-          <select class="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
+          <select className="input" id="ratingSelect" onChange={(e) => {this.setRating(e)}} >
             <option>Rating</option>
             <option value="low">Low</option>
             <option value="average">Average</option>
             <option value="high">High</option>
           </select>
           <button onClick={(e) => {this.filterMovie(e)}}>Filter</button>
+          <button className="return-btn" onClick={() => {this.returnToMovies()}}>Return to all movies</button>
       </form>
       </div>
     )

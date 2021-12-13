@@ -8,17 +8,21 @@ body {
   font-family: 'Economica', sans-serif;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
+header {
+  background-color: #0A0905;
+  width: 100vw;
+}
 .header {
   display: flex;
   justify-content: space-around;
-  margin: 40px 40px 0;
+  margin: 20px 40px 0;
   font-size: 4.8vw;
-  color: #e6c613;
-  opacity: 80%;
+  color: #BB9F0F;
   text-shadow: 5px;
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One';
   text-decoration: none;
 }
 

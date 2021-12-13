@@ -16,7 +16,7 @@ class App extends Component {
       trailer: '',
       movieOverview: '',
       error: '',
-      isLoaded: false,
+      // isLoaded: false,
       foundMovies: []
     }
   }
@@ -44,14 +44,14 @@ class App extends Component {
          })
 }
 
-  setSingleMovie = (id) => {
-    const movieDetails = this.state.movies.find((movie) => {
-      return movie.id === id;
-    })
-    if(id) {
-      this.setState({ foundMovies: [ movieDetails ] })
-    }
-  }
+  // setSingleMovie = (id) => {
+  //   const movieDetails = this.state.movies.find((movie) => {
+  //     return movie.id === id;
+  //   })
+  //   if(id) {
+  //     this.setState({ foundMovies: [ movieDetails ] })
+  //   }
+  // }
 
   setFilteredMovies = (filteredMovies) => {
     if(filteredMovies) {
@@ -77,11 +77,13 @@ class App extends Component {
   render() {
     return (
       <main>
-        <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
-          <h1 class="header">Rancid Tomatillos</h1>
-        </NavLink>
-      <p className='error-message'>{this.state.error}</p>
-        <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>
+        <header>
+          <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
+            <h1 class="header">Rancid Tomatillos</h1>
+          </NavLink>
+          <p className='error-message'>{this.state.error}</p>
+          <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>
+        </header>
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/>}/>
           <Route path="/:movieId" element={<Page movie={this.state.singleMovie}

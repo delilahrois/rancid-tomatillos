@@ -58,26 +58,25 @@ class App extends Component {
     }
   }
 
-  // refreshState = () => {
-  //   this.setState(
-  //     {
-  //       movies: [],
-  //       singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
-  //       trailer: '',
-  //       movieOverview: '',
-  //       error: '',
-  //       isLoaded: false,
-  //       foundMovies: []
-  //     }
-  //   )
-  //   this.componentDidMount();
-  // }
+  refreshState = async () => {
+    await this.setState(
+      {
+        movies: [],
+        singleMovie: {id: '', poster_path: '', backdrop_path: '', title: '', average_rating: ''},
+        trailer: '',
+        movieOverview: '',
+        error: '',
+        foundMovies: []
+      }
+    )
+    this.componentDidMount();
+  }
 
   render() {
     return (
       <main>
         <header>
-          <NavLink to={`/`} style={{textDecoration: 'none'}}>
+          <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
             <h1 className="header">Rancid Tomatillos</h1>
           </NavLink>
           <p className='error-message'>{this.state.error}</p>

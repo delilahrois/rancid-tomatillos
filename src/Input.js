@@ -11,24 +11,25 @@ class Input extends Component {
     }
   }
 
-  setInput = (e) => {
-    this.setState({ searchInput: e.target.value })
-    this.findMovie(e)
+  setInput = async (e) => {
+    await this.setState({ searchInput: e.target.value })
+    this.findMovie(this.state.searchInput)
   }
 
-  setRating = (e) => {
-    this.setState({ rating: e.target.value })
+  setRating = async (e) => {
+    await this.setState({ rating: e.target.value })
+    this.filterMovie(this.state.rating)
   }
 
-  showReturnBtn() {
-    if(this.state.searchInput || this.state.rating) {
-      document.getElementById('return-btn').classList.remove('hidden')
-    }
-  }
+  // showReturnBtn() {
+  //   if(this.state.searchInput || this.state.rating) {
+  //     document.getElementById('return-btn').classList.remove('hidden')
+  //   }
+  // }
 
   findMovie = (e) => {
-    e.preventDefault();
-    this.showReturnBtn();
+    // e.preventDefault();
+    // this.showReturnBtn();
     if(this.state.searchInput) {
       const foundMovie = this.props.movies.filter((movie) => {
         return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
@@ -67,8 +68,8 @@ class Input extends Component {
   // }
 
   filterMovie = (e) => {
-    e.preventDefault();
-    this.showReturnBtn();
+    // e.preventDefault();
+    // this.showReturnBtn();
     if(this.state.rating) {
       const filteredMovies = this.props.movies.filter((movie) => {
         if(this.state.rating === 'low') {
@@ -96,7 +97,6 @@ class Input extends Component {
         <form>
           <label htmlFor="searchInput"></label>
           <input className="input" id="searchInput" type="text" onChange={(e) => {this.setInput(e)}}></input>
-          <button className="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button>
         </form>
         <form>
           <label htmlFor="ratingSelect"></label>
@@ -106,7 +106,6 @@ class Input extends Component {
             <option value="average">Average</option>
             <option value="high">High</option>
           </select>
-          <button onClick={(e) => {this.filterMovie(e)}}>Filter</button>
       </form>
       </div>
     )
@@ -114,6 +113,10 @@ class Input extends Component {
 }
 
 export default Input;
+
+  // {/* <button onClick={(e) => {this.filterMovie(e)}}>Filter</button> */}
+
+// {/* <button className="search-btn" onClick={(e) => {this.findMovie(e)}}>Search</button> */}
 
 // {/* <NavLink to={'/'} style={{ textDecoration: 'none' }} onClick={() => {this.returnToMovies()}}>
 //             <button className="return-btn hidden" id="return-btn">View all movies</button>

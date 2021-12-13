@@ -49,7 +49,7 @@ class App extends Component {
     }
   }
 
-  refreshState =  () => {
+  refreshState = () => {
     this.setState(
       {
         movies: [],
@@ -68,7 +68,7 @@ class App extends Component {
       <main>
         <header>
           <NavLink to={`/`} style={{textDecoration: 'none'}} onClick={() => {this.refreshState()}}>
-            <h1 className="header">Rancid Tomatillos</h1>
+            <h1 className="header">Rancid T🍅matillos</h1>
           </NavLink>
           <p className='error-message'>{this.state.error}</p>
           <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>

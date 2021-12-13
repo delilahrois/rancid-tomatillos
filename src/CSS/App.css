@@ -11,6 +11,11 @@ body {
   width: 100%;
 }
 
+header {
+  width: 100vw;
+  padding: 2vh 0;
+}
+
 .header {
   display: flex;
   color: #ADFF2F;
@@ -19,6 +24,8 @@ body {
   justify-content: space-around;
   margin: 20px 40px 0;
   text-decoration: none;
+  letter-spacing: 10px;
+  animation: text 2s 1;
 }
 
 main {
@@ -30,4 +37,14 @@ main {
   font-size: 2vw;
   margin-top: 0;
   text-align: center;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+  }
+  30% {
+    color: #493e05;
+    letter-spacing: 30px;
+  }
 }

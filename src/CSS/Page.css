@@ -18,14 +18,26 @@ button {
 .side-info {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding-left: 1.5vw;
+  height: 35vw;
+  overflow: overlay;
+  scrollbar-width: thin;
+  scrollbar-color: grey black;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .page-img {
-  height: 540px;
+  height: 35vw;
 }
 
 .movie-title {
+  margin: 0px;
+  font-size: 2.8vw;
   font-family: 'Unica One', cursive;
   font-size: 2.5vw;
 }
@@ -36,9 +48,15 @@ button {
 
 .movie-plot {
   font-size: 1.5vw;
+  width: 90%;
 }
 
 .return-button {
   height: 70px;
   width: 8vw;
+  margin-right: 2vw;
+}
+
+.return-button:hover {
+  transform: scale(1.1);
 }

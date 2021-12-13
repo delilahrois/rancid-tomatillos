@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 40px;
-  /* position: absolute; */
+  overflow: scroll;
 }
 
 button {
@@ -20,6 +20,12 @@ button {
   display: flex;
   flex-direction: column;
   padding-left: 2vw;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .page-img {
@@ -43,4 +49,5 @@ button {
 .return-button {
   height: 70px;
   width: 8vw;
+  margin-right: 2vw;
 }

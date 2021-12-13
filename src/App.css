@@ -8,7 +8,6 @@ body {
   font-family: 'Economica', sans-serif;
   height: 100%;
   width: 100%;
-  overflow: scroll;
 }
 
 header {
@@ -26,12 +25,13 @@ header {
   font-family: 'Unica One';
   text-decoration: none;
   letter-spacing: 10px;
-  animation: text 3s 1;
+  animation: text 2s 1;
 }
 
 main {
   color: #FFDAC6;
   font-family: 'Economica', sans-serif;
+  /* overflow: scroll; */
 }
 
 .error-message {
@@ -45,6 +45,7 @@ main {
     color: black;
   }
   30% {
+
     letter-spacing: 30px;
   }
 }

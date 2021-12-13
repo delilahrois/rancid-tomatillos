@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import Library from './Library'
-import Page from './Page'
-import './App.css'
-import { allMoviesData, movieOverview, movieVideo } from './api-calls.js'
+import React, { Component } from 'react';
+import Library from './Library';
+import Page from './Page';
+import './App.css';
+import { allMoviesData, movieOverview, movieVideo } from './api-calls.js';
 import Input from './Input';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
@@ -33,24 +33,15 @@ class App extends Component {
     })
     this.setState({ singleMovie: movieDetails })
 
-     movieOverview(id).then(data => {this.setState({ movieOverview: data.movie.overview })})
-       .catch(err => {
-           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
-         })
-     movieVideo(id).then(data => {this.setState({ trailer: data.videos[0] })})
-       .catch(err => {
-           this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
-         })
-}
-
-  // setSingleMovie = (id) => {
-  //   const movieDetails = this.state.movies.find((movie) => {
-  //     return movie.id === id;
-  //   })
-  //   if(id) {
-  //     this.setState({ foundMovies: [ movieDetails ] })
-  //   }
-  // }
+    movieOverview(id).then(data => {this.setState({ movieOverview: data.movie.overview })})
+      .catch(err => {
+        this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+      })
+    movieVideo(id).then(data => {this.setState({ trailer: data.videos[0] })})
+      .catch(err => {
+        this.setState({ error: 'Oops! Something went wrong. Refresh and try again.'})
+      })
+  }
 
   setFilteredMovies = (filteredMovies) => {
     if(filteredMovies) {
@@ -80,7 +71,7 @@ class App extends Component {
             <h1 className="header">Rancid Tomatillos</h1>
           </NavLink>
           <p className='error-message'>{this.state.error}</p>
-          <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies}/>
+          <Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/>
         </header>
         <Routes>
           <Route path="/" element={<Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/>}/>

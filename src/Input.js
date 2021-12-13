@@ -1,5 +1,4 @@
 import { React, Component } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import './Input.css'
 
 class Input extends Component {
@@ -20,11 +19,24 @@ class Input extends Component {
     this.setState({ rating: e.target.value })
   }
 
-  findMovie = (e) => {
-    // e.preventDefault();
+  findMovie = () => {
     if(this.state.searchInput) {
+
+      // 2 possible ways to do this.
+        // 1. iterate through movie titles. split each title into separate words. then, split each word into letters, .toLowerCase() to check each letter as we type. 
+        // simultaneously iterate through the state.searchInput.toLowerCase(). 
+        // compare each index of the searchInput to the letters at each index of the movie titles to check if part of the movie actually BEGINS with those letters.
+
+      // iterate through movie titles and filter to check if 
+
       const foundMovie = this.props.movies.filter((movie) => {
-        return movie.title.toLowerCase().includes(this.state.searchInput.toLowerCase());
+        const movieTitle = movie.title.split(' ')
+        console.log(movieTitle)
+        const acceptedMovie = movieTitle.filter((word) => {
+          return word[0].includes(this.state.searchInput.toLowerCase())
+        })
+        // console.log(acceptedMovie)
+        return acceptedMovie
       })
       this.props.setFilteredMovies(foundMovie)
     } else {

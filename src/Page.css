@@ -19,10 +19,12 @@ button {
 .side-info {
   display: flex;
   flex-direction: column;
-  padding-left: 2vw;
+  padding-left: 1.5vw;
   height: 35vw;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   overflow: overlay;
+  scrollbar-width: thin;
+  scrollbar-color: black grey;
 }
 
 .title-container {

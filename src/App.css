@@ -32,7 +32,6 @@ header {
 main {
   color: #FFDAC6;
   font-family: 'Economica', sans-serif;
-  /* overflow: scroll; */
 }
 
 .error-message {
@@ -46,7 +45,7 @@ main {
     color: black;
   }
   30% {
-
+    color: #493e05;
     letter-spacing: 30px;
   }
 }

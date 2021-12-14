@@ -16,7 +16,7 @@ Rancid Tomatillos is a web app that allows users to search movie ratings, read m
 - CSS
 - GitHub
 
-## Install & Setup
+## Install | Setup
 1. Clone down this repository
 2. `cd` into the directory
 3. Run `npm start`
@@ -32,23 +32,24 @@ Rancid Tomatillos is a web app that allows users to search movie ratings, read m
 
 
 ### Main Page view
-
+![Main-Page-view](https://user-images.githubusercontent.com/86859884/145909781-0c48030f-5c8e-4c05-a1db-a8961461747d.gif)
 
 ### Search Feature
-
+![Search-Feature](https://user-images.githubusercontent.com/86859884/145910079-fe54d910-2a1d-492c-b3c7-56a8deb08f26.gif)
 
 ### Rating Feature
-
+![Rating-Feature](https://user-images.githubusercontent.com/86859884/145910119-b6674704-b2cb-4250-a84d-573982a66e80.gif)
 
 ### Single Movie Page preview
-
+![Single-Movie-Page-View](https://user-images.githubusercontent.com/86859884/145910153-6138c428-8511-4250-9995-86f6573cc60b.gif)
 
 ## Future Iterations | Improvements
-1.
-2.
+1. Add abilities for Users to create their own movie ratings
+2. Allow Users to submit movies that aren't already available
+3. Allow Users to have an account where they store favorite movies or have a 'watch list'
 
 ### Project Spec & Rubric
-[Here]
+[Here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 ## Authors | Contributors | Developers
 [Delilah Necrason](https://github.com/delilahrois)

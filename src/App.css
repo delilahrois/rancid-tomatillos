@@ -1,0 +1,34 @@
+body {
+  background-image: url(https://st2.depositphotos.com/6434168/45377/i/600/depositphotos_453772676-stock-photo-three-tomatillos-lined-black-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  padding-bottom: 40px;
+  font-family: 'Economica', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+  font-size: 4.8vw;
+  color: #e6c613;
+  opacity: 80%;
+  text-shadow: 5px;
+  font-family: 'Unica One', cursive;
+  /* position: fixed; */
+}
+
+main {
+  color: #FFDAC6;
+  font-family: 'Economica', sans-serif;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}

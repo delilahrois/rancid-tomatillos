@@ -6,7 +6,7 @@ import '../CSS/Page.css';
 const Page = ({ movie, overview, trailer }) => {
   return (
     <section className='movie-page'>
-      <img className='page-img'src={movie.backdrop_path} alt={movie.title}/>
+      <img className='page-img'src={movie.backdrop_path} alt={movie.title} />
       <article className='side-info'>
         <div className="title-container">
           <h2 className="movie-title">{movie.title}</h2>

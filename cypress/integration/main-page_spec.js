@@ -10,9 +10,9 @@ describe('Main page', () => {
 
   it('should allow user to visit page and render elements', () => {
 
-      cy.get('h1').contains('Rancid Tomatillos')
-        .get('div.movie-grid')
-        .get('img.poster-img')
+      cy.get('[data-cy=page-title]').contains('Rancid Tomatillos')
+        .get('[data-cy=movie-grid]')
+        .get('[data-cy=poster-img]')
         // .get('input[type="text"]')
         // .get('input[type="select"]')
 

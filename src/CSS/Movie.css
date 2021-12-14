@@ -7,8 +7,8 @@
 
 .poster-img {
   box-shadow: 6px 8px 10px #BABD8D;
-  height: 238px;
-  width: 200px;
+  height: 17vw;
+  width: 14vw;
 }
 
 .poster-img:hover {
@@ -28,4 +28,28 @@
 
 .poster-rating {
   font-size: 1vw;
+}
+
+/*
+height: 238px;
+width: 200px; */
+@media screen and (max-width: 1200px) {
+  .poster-img {
+    width: 20vw;
+    height: 22vw;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .poster-img {
+    width: 28vw;
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .poster-img {
+    width: 70vw;
+    height: 86vw;
+  }
 }

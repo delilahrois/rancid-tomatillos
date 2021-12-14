@@ -1,9 +1,13 @@
 .no-trailer {
   align-items: center;
   background-color: white;
+  border-radius: 5px;
   color: black;
   display: flex;
   height: 12vh;
+  line-height: 24px;
+  letter-spacing: 2px;
   padding: 4px;
-  width: 14vw;
+  text-align: center;
+  width: 20vw;
 }

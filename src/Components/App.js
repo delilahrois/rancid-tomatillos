@@ -71,7 +71,6 @@ class App extends Component {
             <h1 className="header">Rancid Tomatillos</h1>
           </NavLink>
           <p className='error-message'>{this.state.error}</p>
-
         </header>
         <Routes>
           <Route path="/" element={<><Input setSingleMovie={this.setSingleMovie} setFilteredMovies={this.setFilteredMovies} movies={this.state.movies} refresh={this.refreshState}/><Library movies={this.state.movies} displayMovie={this.displayMovie} foundMovies={this.state.foundMovies}/></>}/>

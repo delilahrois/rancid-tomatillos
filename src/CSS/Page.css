@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 40px;
+  scrollbar-width: thin;
+  scrollbar-color: black grey;
 }
 
 button {
@@ -21,8 +23,6 @@ button {
   padding-left: 1.5vw;
   height: 35vw;
   overflow: overlay;
-  scrollbar-width: thin;
-  scrollbar-color: grey black;
 }
 
 .title-container {

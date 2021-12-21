@@ -34,6 +34,9 @@ Rancid Tomatillos is a web app that allows users to search movie ratings, read m
 ### Main Page view
 ![Main-Page-view](https://user-images.githubusercontent.com/86859884/145909781-0c48030f-5c8e-4c05-a1db-a8961461747d.gif)
 
+### Responsive Screen Sizing for tablet and phone
+![Responsive-Screen](https://user-images.githubusercontent.com/86859884/146096327-b776f2de-f747-487c-8de8-c30a8a7cd9d3.gif)
+
 ### Search Feature
 ![Search-Feature](https://user-images.githubusercontent.com/86859884/145910079-fe54d910-2a1d-492c-b3c7-56a8deb08f26.gif)
 

@@ -6,3 +6,24 @@
   padding: 0 80px;
   overflow-y: scroll;
 }
+
+@media screen and (max-width: 1200px) {
+  .movie-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .movie-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}

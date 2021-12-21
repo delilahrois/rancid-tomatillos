@@ -21,7 +21,7 @@ header {
   color: #ADFF2F;
   font-family: 'Unica One';
   font-size: 4.8vw;
-  justify-content: space-around;
+  justify-content: center;
   margin: 20px 40px 0;
   text-decoration: none;
   letter-spacing: 10px;
@@ -46,5 +46,32 @@ main {
   30% {
     color: #493e05;
     letter-spacing: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    font-size: 5.6vw;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header {
+    font-size: 9vw;
+  }
+  body {
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .header {
+    font-size: 12vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .header {
+    font-size: 12vw;
   }
 }
